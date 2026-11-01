@@ -1,0 +1,2 @@
+A$https://guxia66898.github.io/tvbox-static/diag/a-minimal.json
+C$https://guxia66898.github.io/tvbox-static/diag/c-direct-plus-js.json

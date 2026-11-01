@@ -1,0 +1,102 @@
+{
+  "sites": [
+    {
+      "key": "ys_cxkjg_cn",
+      "name": "影视仓·直连",
+      "type": 0,
+      "api": "https://ys.cxkjg.cn/api/provide/vod",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "kanmovie_com",
+      "name": "西瓜影视",
+      "type": 3,
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/lib/drpy2.min.js",
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/js/kanmovie_com.js",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0
+    },
+    {
+      "key": "jianyunys_com",
+      "name": "极速追剧",
+      "type": 3,
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/lib/drpy2.min.js",
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/js/jianyunys_com.js",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0
+    },
+    {
+      "key": "zhuiying3_cc",
+      "name": "追影",
+      "type": 3,
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/lib/drpy2.min.js",
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/js/zhuiying3_cc.js",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0
+    },
+    {
+      "key": "sorani_net",
+      "name": "青空次元（番剧）",
+      "type": 3,
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/lib/drpy2.min.js",
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/js/sorani_net.js",
+      "searchable": 0,
+      "quickSearch": 0,
+      "filterable": 0,
+      "changeable": 0
+    },
+    {
+      "key": "aeete_com",
+      "name": "澳特影视",
+      "type": 3,
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/lib/drpy2.min.js",
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/js/aeete_com.js",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0
+    },
+    {
+      "key": "tv_lxyy_club",
+      "name": "蓝光影库",
+      "type": 3,
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/lib/drpy2.min.js",
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/js/tv_lxyy_club.js",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0
+    },
+    {
+      "key": "kankanya_me",
+      "name": "看看鸭",
+      "type": 3,
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/lib/drpy2.min.js",
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/js/kankanya_me.js",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "changeable": 0
+    }
+  ],
+  "lives": [],
+  "parses": [],
+  "flags": [],
+  "rules": [],
+  "ads": [],
+  "doh": [],
+  "_diag": {
+    "purpose": "定位『爬虫加载失败』",
+    "label": "G4 代理+自建jar",
+    "note": "jar 走 gh-proxy（国内可通），推荐首选"
+  },
+  "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/lib/pg.jar;md5;dffec63fb83a2b31b8606bd4bf6bead9"
+}

@@ -1,0 +1,100 @@
+TVBox 订阅地址（2026-11-01 · v3 · 8 站点）
+================================================
+
+【主订阅 · 推荐】走 gh-proxy 通道（国内可直连，已实测）
+https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/config.json
+
+【备选】GitHub Pages（无 CDN 缓存延迟；小文件快，但大文件国内易断流）
+https://guxia66898.github.io/tvbox-static/config.json
+
+【备用】GitHub Raw
+https://raw.githubusercontent.com/guxia66898/tvbox-static/main/config.json
+
+仓库：https://github.com/guxia66898/tvbox-static
+
+
+本次修复（v3）：为什么所有规则站都「爬虫加载失败」
+------------------------------------------------
+症状：导入配置后**能显示 8 个站点名**，但**只有第一个（影视仓·直连）能用**，
+      切到其他站点一律提示「爬虫加载失败」。
+
+根因（绕开本机代理实测定位）：
+  电视盒子没有代理，直连 guxia66898.github.io 拉大文件会**断流**：
+
+    config.json  3 KB    → 2.4 秒下载完成   ✅ 所以站点名能显示
+    lib/pg.jar   2.6 MB  → 35 秒只下到 1.34 MB 就断了   ❌
+
+  于是因果链完整了：
+    · 配置能读出来          → 站名显示正常
+    · jar 拉不下来          → type:3 站点全部「爬虫加载失败」
+    · type:0 直连站不需要 jar → 只有它能用
+
+关键教训：**本机开发环境有代理，走代理测 github.io 一切正常，
+是"假绿"。** 必须用 `--noproxy` 模拟盒子环境才能测出真实情况。
+（本机实测：走代理 200，绕代理 35 秒断流。）
+
+本版修复：
+  · spider 由 Pages 改为 **gh-proxy + raw**
+      https://gh-proxy.com/https://raw.githubusercontent.com/.../lib/pg.jar;md5;dffec63f...
+      绕代理实测：15.9 秒完整下载 2,684,075 字节 ✅
+  · type:3 站点的 api / ext 同走 gh-proxy（引擎 49 KB 也统一通道）
+  · 引擎 drpy2.min.js 里 3 条**相对 import**（./jsencrypt.js 等，
+    含 `import"./x.js"` 副作用导入写法）改为 gh-proxy 绝对路径。
+    原写法解析基准是引擎文件自身位置，客户端加载 ext 时 base 不同，
+    会导致引擎依赖加载失败。`assets://` 是 TVBox 宿主内置模块，保留不动。
+  · 新增 tools/verify_noproxy.py：**绕代理**验证脚本（模拟盒子）
+  · 新增 tools/make_diag_variants.py：7 个 spider 通道诊断变体
+
+
+验证结果
+------------------------------------------------
+绕代理（模拟盒子）端到端：**10/10 通过**
+  7 个规则 js + 引擎 drpy2.min.js + jar 2.68MB + 直连 API 全部完整下载
+功能回归 verify_all.sh：**18/18 通过**
+
+
+spider 通道诊断阶梯（真机逐个试，定位卡在哪一层）
+------------------------------------------------
+若仍报「爬虫加载失败」，按顺序试这几个：
+
+G1 完全不带 spider（测客户端自带爬虫能否兜底）
+https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/diag/g1-nojar.json
+
+G2 jar 走 Pages + md5（对应旧版问题通道）
+https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/diag/g2-pagesjar.json
+
+G3 jar 走 Pages、去掉 md5 校验
+https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/diag/g3-pagesnomd5.json
+
+G4 jar 走 gh-proxy + 自建 jar（= 当前主配置用的通道）
+https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/diag/g4-proxyself.json
+
+G5 jar 走 gh-proxy + 上游 gao 的 jar（与 0825.json 同源）
+https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/diag/g5-proxygao.json
+
+G6 jar + api/ext 全走 gh-proxy（整链路绕开 Pages）
+https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/diag/g6-proxyall.json
+
+G7 用 gao 的引擎 + gao 的 jar 跑我们的规则（若只有它通，说明问题在我们那份引擎）
+https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/diag/g7-gaoengine.json
+
+
+各站真实能力（实测，不虚报）
+------------------------------------------------
+1. 影视仓·直连      直连CMS   列表✅ 搜索✅ 筛选✅（14984 条，9 分类）
+2. 蓝光影库         客户端规则 列表12条 搜索35条 选集80集
+3. 看看鸭           客户端规则 列表89条 搜索16条 选集196集（复刻robot.php验证）
+4. 澳特影视         客户端规则 列表20条 搜索⚠️站点验证码 选集2集
+5. 西瓜影视         客户端规则 列表24条 搜索✅走/api/suggest 详情直链m3u8
+6. 追影             客户端规则 列表27条 搜索9条 选集127集
+7. 青空次元（番剧）  客户端规则 列表24条 搜索——站内无搜索功能 选集7集
+8. 极速追剧         客户端规则 列表48条 选集37集（3线路；播放由前端异步加载）
+
+
+若导入后仍无分类
+------------------------------------------------
+1. 确认用的是**主订阅**（gh-proxy 那条），不是 Pages 那条
+2. 在客户端里清配置缓存 / 重新导入
+3. 先看「影视仓·直连」有没有分类——它是纯直连、不依赖 jar，
+   可用来区分「配置读取问题」还是「jar 加载问题」
+4. 仍不行就试上面的 G1~G7 通道阶梯，能精确定位到哪一层

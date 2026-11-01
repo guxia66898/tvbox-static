@@ -1,0 +1,46 @@
+{
+  "spider": "./lib/pg.jar;md5;dffec63fb83a2b31b8606bd4bf6bead9",
+  "sites": [
+    {
+      "key": "L1_csp",
+      "name": "L1-内置类",
+      "type": 3,
+      "api": "csp_Douban",
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/gaotianliuyun/gao/master/json/douban.json",
+      "searchable": 0,
+      "quickSearch": 0,
+      "changeable": 1
+    },
+    {
+      "key": "L2_static",
+      "name": "L2-静态规则",
+      "type": 3,
+      "api": "./lib/drpy2.min.js",
+      "ext": "./diag/k_static.js",
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 0
+    },
+    {
+      "key": "L3_real",
+      "name": "L3-真实站点",
+      "type": 3,
+      "api": "./lib/drpy2.min.js",
+      "ext": "./js/kanmovie_com.js",
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 0
+    }
+  ],
+  "lives": [],
+  "parses": [],
+  "flags": [],
+  "rules": [],
+  "ads": [],
+  "doh": [],
+  "_diag": {
+    "purpose": "分层定位『爬虫加载失败』—— 相对路径版",
+    "note": "完全照抄 0825.json 的写法：spider/api/ext 全用 ./ 相对路径",
+    "howto": "依次点 L1 / L2 / L3，与 L-a 对比即可看出绝对/相对路径的差别"
+  }
+}

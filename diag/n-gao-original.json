@@ -1,0 +1,38 @@
+{
+  "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/gaotianliuyun/gao/master/jar/pg.jar;md5;dffec63fb83a2b31b8606bd4bf6bead9",
+  "sites": [
+    {
+      "key": "N1_gao_csp",
+      "name": "N1-gao内置类",
+      "type": 3,
+      "api": "csp_Douban",
+      "indexs": 1,
+      "searchable": 0,
+      "changeable": 1,
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/gaotianliuyun/gao/master/json/douban.json"
+    },
+    {
+      "key": "N2_gao_drpy",
+      "name": "N2-gao规则站",
+      "type": 3,
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/gaotianliuyun/gao/master/lib/drpy2.min.js",
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/gaotianliuyun/gao/master/js/mp4us.js",
+      "playerType": "1",
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "timeout": 30
+    }
+  ],
+  "lives": [],
+  "parses": [],
+  "flags": [],
+  "rules": [],
+  "ads": [],
+  "doh": [],
+  "_diag": {
+    "purpose": "gao 原版站点对照（不掺我们的任何文件）",
+    "note": "两个站点原样取自 0825.json，jar/引擎/规则全部指向 gao 仓库",
+    "howto": "N1 出内容=jar 正常；N2 出内容=drpy 引擎正常。若 N1 出而 N2 不出=这台客户端跑不了 drpy，那么我们的 7 个规则站注定也不行。"
+  }
+}

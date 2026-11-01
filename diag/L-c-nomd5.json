@@ -1,0 +1,46 @@
+{
+  "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/lib/pg.jar",
+  "sites": [
+    {
+      "key": "L1_csp",
+      "name": "L1-内置类",
+      "type": 3,
+      "api": "csp_Douban",
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/gaotianliuyun/gao/master/json/douban.json",
+      "searchable": 0,
+      "quickSearch": 0,
+      "changeable": 1
+    },
+    {
+      "key": "L2_static",
+      "name": "L2-静态规则",
+      "type": 3,
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/lib/drpy2.min.js",
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/diag/k_static.js",
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 0
+    },
+    {
+      "key": "L3_real",
+      "name": "L3-真实站点",
+      "type": 3,
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/lib/drpy2.min.js",
+      "ext": "https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/js/kanmovie_com.js",
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 0
+    }
+  ],
+  "lives": [],
+  "parses": [],
+  "flags": [],
+  "rules": [],
+  "ads": [],
+  "doh": [],
+  "_diag": {
+    "purpose": "分层定位『爬虫加载失败』",
+    "note": "spider 不带 md5 校验",
+    "howto": "依次点 L1 / L2 / L3。L1 出内容=jar 正常；L2 出条目=引擎正常；L3 出条目=全链路正常。"
+  }
+}

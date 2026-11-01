@@ -1,0 +1,37 @@
+[
+  {
+    "file": "g1-nojar.json",
+    "label": "G1 无spider",
+    "spider": "(未设置)"
+  },
+  {
+    "file": "g2-pagesjar.json",
+    "label": "G2 Pages+md5",
+    "spider": "https://guxia66898.github.io/tvbox-static/lib/pg.jar;md5;dffec63fb83a2b31b8606bd4bf6bead9"
+  },
+  {
+    "file": "g3-pagesnomd5.json",
+    "label": "G3 Pages无md5",
+    "spider": "https://guxia66898.github.io/tvbox-static/lib/pg.jar"
+  },
+  {
+    "file": "g4-proxyself.json",
+    "label": "G4 代理+自建jar",
+    "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/lib/pg.jar;md5;dffec63fb83a2b31b8606bd4bf6bead9"
+  },
+  {
+    "file": "g5-proxygao.json",
+    "label": "G5 代理+上游jar",
+    "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/gaotianliuyun/gao/master/jar/pg.jar;md5;dffec63fb83a2b31b8606bd4bf6bead9"
+  },
+  {
+    "file": "g6-proxyall.json",
+    "label": "G6 全代理",
+    "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/lib/pg.jar;md5;dffec63fb83a2b31b8606bd4bf6bead9"
+  },
+  {
+    "file": "g7-gaoengine.json",
+    "label": "G7 换gao引擎",
+    "spider": "https://gh-proxy.com/https://raw.githubusercontent.com/gaotianliuyun/gao/master/jar/pg.jar;md5;dffec63fb83a2b31b8606bd4bf6bead9"
+  }
+]
