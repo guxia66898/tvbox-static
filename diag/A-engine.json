@@ -1,45 +1,23 @@
 {
-  "spider": "./lib/pg.jar;md5;dffec63fb83a2b31b8606bd4bf6bead9",
+  "spider": "https://raw.githubusercontent.com/guxia66898/tvbox-static/main/lib/pg.jar;md5;dffec63fb83a2b31b8606bd4bf6bead9",
   "sites": [
     {
-      "key": "A1_old_ghfast",
-      "name": "A1老引擎+ghfast",
+      "key": "A1_old",
+      "name": "A1老引擎49KB",
       "type": 3,
-      "api": "https://ghfast.top/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/lib/drpy2.ghfast.min.js",
-      "ext": "https://ghfast.top/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/js/t1_static.js",
+      "api": "https://raw.githubusercontent.com/guxia66898/tvbox-static/main/lib/drpy2.min.js",
+      "ext": "https://raw.githubusercontent.com/guxia66898/tvbox-static/main/js/t1_static.js",
       "searchable": 0,
       "quickSearch": 0,
       "filterable": 0,
       "changeable": 0
     },
     {
-      "key": "A2_inline_ghfast",
-      "name": "A2内联引擎+ghfast",
+      "key": "A2_inline",
+      "name": "A2内联引擎892KB",
       "type": 3,
-      "api": "https://ghfast.top/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/lib/drpy2.inline.min.js",
-      "ext": "https://ghfast.top/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/js/t1_static.js",
-      "searchable": 0,
-      "quickSearch": 0,
-      "filterable": 0,
-      "changeable": 0
-    },
-    {
-      "key": "A3_old_rel",
-      "name": "A3老引擎+相对路径",
-      "type": 3,
-      "api": "./lib/drpy2.rel.min.js",
-      "ext": "./js/t1_static.js",
-      "searchable": 0,
-      "quickSearch": 0,
-      "filterable": 0,
-      "changeable": 0
-    },
-    {
-      "key": "A4_inline_rel",
-      "name": "A4内联引擎+相对路径",
-      "type": 3,
-      "api": "./lib/drpy2.inline.min.js",
-      "ext": "./js/t1_static.js",
+      "api": "https://raw.githubusercontent.com/guxia66898/tvbox-static/main/lib/drpy2.inline.min.js",
+      "ext": "https://raw.githubusercontent.com/guxia66898/tvbox-static/main/js/t1_static.js",
       "searchable": 0,
       "quickSearch": 0,
       "filterable": 0,
@@ -50,7 +28,7 @@
   "parses": [],
   "flags": [],
   "rules": [],
-  "version": "diag-A-engine-20261102",
-  "_purpose": "四格对照，隔离『引擎版本(老49KB vs 内联892KB)』×『路径(绝对ghfast vs 相对./)』。四个站用的都是 t1_static 规则(纯静态，不联网)。任一出分类『测试』=该组合可用。",
-  "_howto": "逐个点 A1→A4。能出『测试』分类的即为可用组合。"
+  "version": "diag-A-engine-raw-20261102",
+  "_purpose": "全 raw 直连，隔离『引擎体积』变量：A1=49KB老引擎，A2=892KB内联引擎。用的都是 t1_static(纯静态不联网)。任一出『测试』分类=该引擎可加载。",
+  "_howto": "逐个点 A1 / A2，看哪个能出分类『测试』和卡片『【T1】静态渲染OK』。"
 }

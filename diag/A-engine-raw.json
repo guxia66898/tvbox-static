@@ -1,0 +1,34 @@
+{
+  "spider": "https://raw.githubusercontent.com/guxia66898/tvbox-static/main/lib/pg.jar;md5;dffec63fb83a2b31b8606bd4bf6bead9",
+  "sites": [
+    {
+      "key": "A1_old",
+      "name": "A1老引擎49KB",
+      "type": 3,
+      "api": "https://raw.githubusercontent.com/guxia66898/tvbox-static/main/lib/drpy2.min.js",
+      "ext": "https://raw.githubusercontent.com/guxia66898/tvbox-static/main/js/t1_static.js",
+      "searchable": 0,
+      "quickSearch": 0,
+      "filterable": 0,
+      "changeable": 0
+    },
+    {
+      "key": "A2_inline",
+      "name": "A2内联引擎892KB",
+      "type": 3,
+      "api": "https://raw.githubusercontent.com/guxia66898/tvbox-static/main/lib/drpy2.inline.min.js",
+      "ext": "https://raw.githubusercontent.com/guxia66898/tvbox-static/main/js/t1_static.js",
+      "searchable": 0,
+      "quickSearch": 0,
+      "filterable": 0,
+      "changeable": 0
+    }
+  ],
+  "lives": [],
+  "parses": [],
+  "flags": [],
+  "rules": [],
+  "version": "diag-A-engine-raw-20261102",
+  "_purpose": "全 raw 直连，隔离『引擎体积』变量：A1=49KB老引擎，A2=892KB内联引擎。用的都是 t1_static(纯静态不联网)。任一出『测试』分类=该引擎可加载。",
+  "_howto": "逐个点 A1 / A2，看哪个能出分类『测试』和卡片『【T1】静态渲染OK』。"
+}
