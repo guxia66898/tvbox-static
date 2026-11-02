@@ -1,0 +1,46 @@
+{
+  "sites": [
+    {
+      "key": "t1_static",
+      "name": "T1静态渲染",
+      "type": 3,
+      "api": "https://ghfast.top/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/lib/drpy2.inline.min.js",
+      "ext": "https://ghfast.top/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/js/_t1_static.js",
+      "searchable": 0,
+      "quickSearch": 0,
+      "filterable": 0,
+      "changeable": 0
+    },
+    {
+      "key": "t2_reqbaidu",
+      "name": "T2请求百度",
+      "type": 3,
+      "api": "https://ghfast.top/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/lib/drpy2.inline.min.js",
+      "ext": "https://ghfast.top/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/js/_t2_reqbaidu.js",
+      "searchable": 0,
+      "quickSearch": 0,
+      "filterable": 0,
+      "changeable": 0
+    },
+    {
+      "key": "t3_reqkanmovie",
+      "name": "T3请求西瓜影视",
+      "type": 3,
+      "api": "https://ghfast.top/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/lib/drpy2.inline.min.js",
+      "ext": "https://ghfast.top/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/js/_t3_reqkanmovie.js",
+      "searchable": 0,
+      "quickSearch": 0,
+      "filterable": 0,
+      "changeable": 0
+    }
+  ],
+  "lives": [],
+  "parses": [],
+  "flags": [],
+  "rules": [],
+  "spider": "https://ghfast.top/https://raw.githubusercontent.com/guxia66898/tvbox-static/main/lib/pg.jar;md5;dffec63fb83a2b31b8606bd4bf6bead9",
+  "version": "diag-T-req-20261102",
+  "generated_by": "tvbox-ai-rulegen",
+  "mode": "diag-req-test",
+  "_purpose": "区分'空内容'是 req() 抓取失败还是选择器写错。T1静态渲染 / T2请求百度 / T3请求真实站点。请注意每站点进去后卡片标题显示什么。"
+}
